@@ -28,7 +28,7 @@ function App() {
           />
           <Route 
             path='*' 
-            element={<NotFound />} 
+            element={<Login />} 
           />
         </Routes>
       </BrowserRouter>
