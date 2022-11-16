@@ -44,7 +44,7 @@ export const Bets = () =>{
                       <thead className="border-b">
                         <tr>
                           <th scope="col" className="text-sm font-medium text-gray-900 px-6 py-4 text-left">
-                          Jogo  
+                          Jogos 
                           </th>
                           <th scope="col" className="text-sm font-medium text-gray-900 px-6 py-4 text-left">
                             Cotação
