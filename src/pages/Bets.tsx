@@ -17,7 +17,7 @@ type Bets = {
 
 export const Bets = () =>{
   const context = useContext(AuthContext);
-  const {data} = useFetch<Bets[]>(`${import.meta.env.VITE_APP_API_URL}/bets/${context.id}`, `${context.token}`);
+  const {data} = useFetch<Bets[]>(`${import.meta.env.VITE_API_URL}/bets/${context.id}`, `${context.token}`);
 
   function formatDate(date: string){
     const dateConvert = Date.parse(date)

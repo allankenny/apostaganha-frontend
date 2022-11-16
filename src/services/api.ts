@@ -1,5 +1,5 @@
 import axios from "axios";
 
 export const Api = axios.create({
-  baseURL: "https://apostaganha-backend.herokuapp.com",
+  baseURL: import.meta.env.VITE_API_URL,
 })
