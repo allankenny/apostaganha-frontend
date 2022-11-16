@@ -52,6 +52,9 @@ export const Bets = () =>{
                           <th scope="col" className="text-sm font-medium text-gray-900 px-6 py-4 text-left">
                             Valor da Aposta
                           </th>
+                          <th scope="col" className="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+                            Cod
+                          </th>
                           <th scope="col" className="text-sm font-medium text-gray-900 px-6 py-4 text-right">
                             Data das apostas
                           </th>
@@ -69,6 +72,9 @@ export const Bets = () =>{
                             </td>
                             <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap text-left">
                               {bet.amount}
+                            </td>
+                            <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap text-left">
+                              {bet.hash}
                             </td>
                             <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap text-right">
                               {formatDate(bet.createdAt)}
