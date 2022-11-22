@@ -2,6 +2,7 @@ import { useAuth } from "../context/AuthProvider/useAuth";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import logo from "../assets/logo.svg";
+import { Loading } from "../components/Loading";
 
 export const Login = () => {
   const auth = useAuth();
@@ -9,13 +10,15 @@ export const Login = () => {
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [loading, setLoading] = useState(false);
 
   async function handleLogin() {
-
+    setLoading(true);
     if(email && password) {
       try{
         await auth.authenticate(email, password);
         history('/bets');
+        setLoading(false);
       }catch(error){
         console.log(error);
         alert('Email ou senha inválido');
@@ -23,7 +26,7 @@ export const Login = () => {
     }else{
       alert('Informe email e senha');
     }
-
+    setLoading(false);
   }
 
   return (
@@ -63,7 +66,7 @@ export const Login = () => {
               data-mdb-ripple-color="light"
               onClick={handleLogin}
             >
-              Entrar
+              {loading ? <Loading/> : 'Entrar'}
             </button>
             <p className="mt-5 text-sm text-gray-500">Faça o login para acessar a conta</p>
           </div>
